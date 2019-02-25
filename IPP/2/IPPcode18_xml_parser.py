@@ -1,6 +1,6 @@
-# Jakub Kubik (xkubiklex_syn_err)
-# interpret for IPPcode18
-# ------------------------
+# parser for IPPcode18
+# Jakub Kubik 
+# 15.4.2018
 
 
 import re

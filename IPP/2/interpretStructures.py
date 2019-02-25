@@ -1,6 +1,6 @@
-
+# data structures for interpret
 # Jakub Kubik (xkubik32)
-# interpret for IPPcode18
+# 15.4.2018
 
 import sys
 

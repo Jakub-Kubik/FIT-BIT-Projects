@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# Jan Jakub Kubik (xkubik32)
+# Jakub Kubik (xkubik32)
 # Interpret for IPPcode18
+# 15.4.2018
 
 from IPPcode18_xml_parser import ParseProgramArgsAndOpenFile, ParseXML
 from interpretStructures import Variable, Frame, AllLabels

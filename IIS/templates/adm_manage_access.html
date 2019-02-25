@@ -1,0 +1,60 @@
+
+
+  {% extends 'base.html' %}
+  {% block content %}
+
+    <div class="row">
+        <h1 class="col title opt">Správa dopnkov</h1>
+    </div>
+
+    {% if messages %} 
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% load static %}
+    <a href="{% url 'add_accessory' %}" class="button btn btn-lg btn-success" >Pridať</a>
+
+    <table class="table table-striped" style="width: 80%; margin-left: 5%; margin-top: 5%;">
+        <thead>
+            <tr>
+                <th scope="col">Názov</th>
+
+                {% if request.user.is_superuser %}
+                    <th scope="col">Správca</th>
+                {% endif %}
+
+                <th scope="col">Množstvo</th>
+                <th scope="col">Cena</th>
+                <th scope="col">Vymazať</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <form class="centeredForm" action="." method="POST">
+            {% csrf_token %}
+            {% for product in products %}
+            <tr>
+                <td>{{ product.accessory.name }}</td>
+
+                <!-- z prduktov do doplnkov  -->
+                {% if request.user.is_superuser %}
+                    <td>{{ product.manager }}</td>
+                {% endif %}
+
+                <td>{{ product.accessory.amount }}</td>
+                <td>{{ product.accessory.price }}</td>
+                <td align="center">
+                    <input type="checkbox" class="form-check-input" name="delete_access" value="{{ product.product_id }}"/>
+                </td>
+                <td><a href="#" class="btn btn-sm btn-warning" >Upraviť</a></td>
+            </tr>
+            {% endfor %}
+                <input name="delete_list" class="btn btn-lg btn-danger" type='submit' value='Odstrániť'/>
+            </form>
+        </tbody>
+    </table>
+{% endblock content %}

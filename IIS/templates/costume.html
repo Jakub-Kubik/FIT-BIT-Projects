@@ -1,0 +1,37 @@
+
+  
+{% extends "base.html" %}
+{% block content %}
+            <!-- Main content of page -->
+            <div id="body" class="container">
+				<h1 class="title">Kostýmy</h1>
+
+				{% for costume in costumes %}
+				<div class="item" >
+				{% load static %}
+					<img src="{% static 'images/logo.png' %}" alt=""  class="col-4 rounded-circle image">
+					
+					<div style="float: left; margin-left: 10%;">
+						<span class="text-white bg-dark" style="padding: 3%"><span class="decorate">Názov   :</span> <b>{{ costume.name }}</b> </span><br>
+						<span class="decorate">Popis    :</span> {{ costume.description }} <br>
+						<span class="decorate">Výrobca  :</span> {{ costume.manufacturer }} <br>
+						<span class="decorate">Látka    :</span> {{ costume.fabric }} <br>
+						<span class="decorate">Farba    :</span> {{ costume.color }} <br>
+						<span class="decorate">Materiál :</span> {{ costume.material }} <br>
+						<span class="decorate">Veľkosť  :</span> {{ costume.size }} <br>
+						<span class="decorate">Katgória :</span> {{ costume.category }} <br>
+						<span class="decorate">Mnozstvo :</span> {{ costume.amount }} ks <br>
+						<span class="decorate">Cena		:</span> {{ costume.price }} € <br>
+					</div>
+
+					{% if request.user.is_customer %}
+					<button type="button" class="btn btn-lg btn-success col-3" id="loginAndOut" style="margin-top: 30%;">
+						Pridať do košíka
+					</button>
+					{% endif %}
+				</div>
+				{% endfor %}
+
+            </div> <!-- #body -->
+{% endblock %}
+            

@@ -1,0 +1,39 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="title opt">Osobné údaje</h1>
+
+    {% if messages %} 
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    <a href="#" class="button btn btn-lg btn-warning" >Upraviť</a>
+    <a href="{% url 'change_password' %}" class="btn btn-lg btn-warning" >Zmeniť heslo</a>
+    <a href="#" class="btn btn-lg btn-danger" >Zmazať účet</a>
+
+    <div id="personalInfo">
+        <div style="float: left;">
+            <div>
+                <h3>Login:</h3>{{ request.user.username }}
+            </div>
+            <div>
+                <h3>Meno:</h3>{{ request.user.first_name }}
+            </div>
+            <div>
+                <h3>Priezvisko:</h3>{{ request.user.last_name }}
+            </div>
+            <div>
+                <h3>Email:</h3>{{ request.user.email }}
+            </div>  
+        </div>
+        {% load static %}
+        <div>
+            <img src="{% static 'images/profile.png' %}" alt="profile image" width="250px" height="250px" style="float: right;" >
+        </div>
+    </div> 
+{% endblock content %}

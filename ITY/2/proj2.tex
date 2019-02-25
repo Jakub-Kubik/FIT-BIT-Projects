@@ -1,0 +1,244 @@
+% Project n. 2 ITY
+% Jan Jakub Kubik (xkubik32)
+% VUT FIT 18.3.2017
+
+\documentclass[a4paper, 11pt, times]{article}
+
+% ------------------------------------------
+% Required pages size, options and packages
+% ------------------------------------------
+\usepackage[left=1.5cm, top=2.5cm, text={18cm, 25cm}]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage{mathptmx}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% For dedinitions in 1. section -----------------------------
+\theoremstyle{definition}
+\newtheorem{definition}{Definice}[section]
+
+\theoremstyle{theorem}
+\newtheorem{theorem}[definition]{Algoritmus}
+\newtheorem{lema}{Věta}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Důkaz}
+
+% ----------
+% Tite page 
+% ----------
+\begin{document}
+\begin{center}
+  \Huge\textsc{Fakulta infrmačních technologií \\
+      Vysoké učení technické v~Brně}\\
+  \vspace{\stretch{0.382}}
+  \huge Typografie a~publikování \---\ 2.projekt\\
+  Sazba dokumentů a~matematických výrazů
+  \vspace{\stretch{0.618}}
+\end{center}
+
+{\LARGE 2017 \hfill Ján Jakub Kubík}
+\thispagestyle{empty}
+\newpage
+
+% -------
+% Page 1 
+% -------
+\clearpage
+\setcounter{page}{1}
+
+\begin{twocolumn}
+  
+  % Section 0
+  \section*{Úvod}
+   V~této úloze si vyzkoušíme sazbu titulní strany, matematických vzorců,
+   prostředí a~dalších textových struktur obvyklých pro technicky
+   zaměřené texty například rovnice (\ref{sec:1}) nebo definice \ref{subsec:1} na straně \pageref{first}.
+   \par Na titulní straně je využito sázení nadpisu podle optického středu s~využitím
+   zlatého řezu. Tento postup byl probírán na přednášce.
+
+
+  % ----------
+  % Section 1
+  % ----------
+  \section{Matematický text}
+  \label{sec:1}
+  \label{first}
+  Nejprve se podíváme na sázení matematických symbolů a~výrazů v~plynulém textu.
+   Pro množinu $V$ označuje card$(V)$ kardinalitu $V$
+  Pro množinu $V$ reprezentuje $V^*$ volný monoid generovaný množinou $V$
+  s~operací konkatenace.
+  Prvek identity ve volném monoidu $V^*$ značíme symbolem $\varepsilon$
+  Nechť $V^+=V^*-\{\varepsilon\}$ Algebraicky je tedy $V^+$ volná pologrupa
+  generovaná množinou $V$ s~operací konkatenace. Konečnou neprázdnou
+  množinu $V$ nazvěme $abeceda$. Pro $\omega \in V^*$ označuje $|\omega|$ délku řetězce $\omega$
+  Pro $W \subseteq V$ označuje occur$(\omega, W)$ počet výskytů
+  symbolů z~$W$ v~řetězci $\omega$ a~sym$(w, i)$ určuje $i$-tý symbol řetězce $\omega$;
+  například sym$(abcd, 3)=c$
+
+  Nyní zkusíme sazbu definic a~vět s~využitím balíku
+  \texttt{amsthm.}
+
+
+  % Definition 1.1
+  \begin{definition}  
+  Definice: Bezkontextová gramatika je čtveřice $G=(V, T, P, S)$, kde $V$ je totální abeceda,
+  $T \subseteq V$ je abeceda terminálů, $S \in (V-T)$ je startující symbol a~$P$ je konečná množina pravidel
+  tvaru $q: A \rightarrow \alpha$, kde $A \in (V-T)$, $\alpha \in V^*$ a~$q$
+  je návěští tohoto pravidla. Nechť $N=V-T$ značí abecedu neterminálů.
+  Pokud $q: A \rightarrow \alpha \in P$, $\gamma$, $\delta \in V^*$, $G$,
+  provádí derivační krok z~$\gamma A \delta$ do $\gamma \alpha \delta$ podle pravidla $q: A \rightarrow \alpha$,
+  symbolicky píšeme $\gamma A \delta \Rightarrow \gamma \alpha \delta [q: A \rightarrow \alpha] $
+  nebo zjednodušeně $\gamma A \delta \Rightarrow \gamma \alpha \delta$ .
+  Standardním způsobem definujeme $\rightarrow^m$, kde $m \geq 0$ . Dále definujeme
+  tranzitivní uzávěr $\Rightarrow^+$ a~tranzitivně-reflexivní uzávěr $\Rightarrow^*$ .
+  \end{definition}
+
+  Algoritmus můžeme uvádět podobně jako definice textově, nebo využít pseudokódu
+  vysázeného ve vhodném prostředí (například algorithm2e).
+
+
+  % Algorithm 1.2
+  \begin{theorem} 
+  Algoritmus pro ověření bezkontextovosti gramatiky. Mějme gramatiku G = (N, T, P, S).
+  \begin{enumerate}
+    \item Pro každé pravidlo $p \in P$ proveď test, zda $p$ na levé straně obsahuje právě jeden symbol z~$N$ .
+    \label{itm:1}
+    \item Pokud všechna pravidla splňují podmínku z~kroku \ref{itm:1}, tak je gramatika $G$ bezkontextová.
+ \end{enumerate}
+ \end{theorem}
+
+
+  % Definition 1.3
+  \begin{definition}
+  \textit{Jazyk} definovaný gramatikou $G$ definujeme jako $L(G)=\{w \in T^*|S \rightarrow^* w \}$ .
+  \end{definition}
+
+
+  % Subsection of 1st section
+  \subsection{Podsekce obsahující větu}
+  \label{subsec:1}
+
+
+  % Definition 1.4
+  \begin{definition} 
+  Nechť $L$ je libovolný jazyk. $L$ je \textit{bezkontextový jazyk}, když a~jen
+  když $L=L(G)$, kde (G) je libovolná bezkontextová gramatika.
+  \end{definition}
+
+
+  % Definition 1.5
+  \begin{definition}
+  Množinu $\mathcal{L}_{CF}=\{L|L$ je bezkontextový jazyk\} nazýváme \textit{třídou bezkontextových jazyků}.
+  \end{definition}
+
+
+  % Sentence 1
+  \begin{lema}  
+  \label{fig:veta}
+  Nechť $\mathcal{L}_{abc}=\{a^n b^n c^n|n \geq 0\}.$ Platí, že $L_{abc} \notin  L_{CF}$
+  \end{lema}
+
+
+  % Proof without number
+  \begin{remark}
+   Důkaz: Důkaz se provede pomocí Pumping lemma pro bezkontextové jazyky, kdy ukážeme,
+   že není možné, aby platilo, což bude implikovat
+  pravdivost věty \ref{fig:veta}.\hfill \qedsymbol
+   \end{remark}
+
+  
+  % ----------
+  % Section 2 
+  % ----------
+  \section{Rovnice a~odkazy}
+  Složitější matematické formulace sázíme mimo plynulý text. Lze umístit několik
+  výrazů na jeden řádek, ale pak je třeba tyto vhodně oddělit, například příkazem \verb|\quad|.
+
+  \begin{align*}
+  {\sqrt[x^2]{y^3_0} \quad \mathbb{N}=\{0,1,2,...\} \quad x^{y^y} \neq x^{yy} \quad z_{i_j} \not \equiv z_{ij}}
+  \end{align*}
+
+  V~rovnici (\ref{eq:1}) jsou využity tři typy závorek s~různou explicitně definovanou velikostí.
+
+  \begin{equation} \label{eq:1} % 1. rovnica
+    \begin{aligned}
+    \left\{\Big[(a+b)*c\Big]^d+1\right\}\quad&=\quad x \\
+    \lim_{x \to \infty} \frac{\sin^2x+\cos^2x}{4} \quad &= \quad y
+    \end{aligned}
+  \end{equation}\\
+
+  V~této větě vidíme, jak vypadá implicitní vysázení limity $\lim_{n \to \infty} f(n)$ v~normálním
+   odstavci textu. Podobně je to i~s~dalšími symboly jako $\sum_{1}^{n}$ či $\bigcup_{A \in B}$. V~případě
+    vzorce $\lim\limits_{x \to 0} \frac{\sin x}{x} = 1$ jsme si vynutili méně úspornou sazbu příkazem
+  \verb|\limits|
+
+\begin{alignat}{2}
+ \int\limits_a^b f(x)dx \quad&=\quad -\ \int_b^a f(x)dx \\
+ \left(\sqrt[5]{x^4}\right)' = \left(x^\frac{4}{5}\right)' \quad&=\quad \frac{4}{5}x^{-\frac{1}{5}} = \frac{4}{5\sqrt[5]{x}} \\
+ \overline{\overline{A \vee B}} \quad&=\quad \overline{\overline{A} \wedge \overline{B}}
+\end{alignat}
+
+  
+% ----------
+% Section 3
+% ----------
+\section{Matice}
+Pro sázení matic se velmi často používá prostředí \verb|array| a~závorky (\verb|\left, \right|).
+
+\begin{equation*}
+  \begin{pmatrix}
+    a+b & b-a  \\
+    \widehat{\xi + \omega} & \hat{\pi} \\
+    \vec{a} & \overleftrightarrow{AC}  \\
+    0 & \beta
+  \end{pmatrix}
+\end{equation*}
+
+\begin{equation*}
+A=
+  \begin{Vmatrix}
+  \ a_{1,1} & a_{1,2} & \cdots & a_{1,n} \ \\
+  \ a_{2,1} & a_{2,2} & \cdots & a_{2,n} \ \\
+  \ \vdots  & \vdots  & \ddots & \vdots  \ \\
+  \ a_{m,1} & a_{m,2} & \cdots & a_{m,n} \
+  \end{Vmatrix}
+\end{equation*}
+
+\begin{equation*}
+  \begin{vmatrix}
+    \ t & u\  \\
+    \ v~& w \ \\
+  \end{vmatrix}
+  = tw - uv
+\end{equation*}
+
+Prostředí \verb|array| lze úspěšně využít i~jinde.
+\begin{equation*}
+\left(\!
+  \begin{array}{c}
+    n \\
+    k~\end{array}
+\!\right) =
+    \begin{cases}
+      \ \frac{n!}{k!(n-k)!}       & \ \text{pro } 0 \le k~\le n\\
+      \  0                        & \ \text{pro } k~< 0 \ \text{nebo}\ k~> n\\
+    \end{cases}
+\end{equation*}
+
+
+% ----------
+% Section 4
+% ----------
+\section{Závěrem}
+V~případě, že budete potřebovat vyjádřit matematickou konstrukci
+nebo symbol a~nebude se Vám dařit jej nalézt \\ v~samotném \LaTeX u,
+doporučuji prostudovat možnosti balíku maker \AmS-\LaTeX.
+Analogická poučka platí obecně pro jakoukoli konstrukci v~\TeX u.
+
+\end{twocolumn}
+\end{document}

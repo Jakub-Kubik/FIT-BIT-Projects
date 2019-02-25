@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+{% block content %}    
+    <div class="row">
+        <h1 class="col title opt">Správa zamestnancov</h1>   
+    </div>
+                        
+    {% if messages %} 
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+
+    {% load static %}
+    <a href="{% url 'employee_signup' %}" class="button btn btn-lg btn-success" >Pridať</a>
+
+    <table class="table table-striped" style="width: 90%; margin-left: 5%; margin-top: 5%;">
+        <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Meno</th>
+                <th scope="col">Priezvisko</th>
+                <th scope="col">Dátum narodenia</th>
+                <th scope="col">Email</th>
+                <th scope="col">Pozícia</th>
+                <th scope="col">Odstániť</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form class="centeredForm" action="." method="POST">
+            {% csrf_token %}
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.username }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.employee.birth_date }}</td>
+                <td>{{ employee.email }}</td>
+                <td>{{ employee.employee.position }}</td>
+                <td align="middle">
+                    <input type="checkbox" class="form-check-input" name="delete_emp" value="{{ employee.username }}"/>
+                </td>
+            </tr>
+            {% endfor %} 
+                <input name="delete_list" class="btn btn-lg btn-danger" type='submit' value='Odstrániť'/>
+            </form>
+        </tbody>
+    </table>             
+{% endblock content %} 

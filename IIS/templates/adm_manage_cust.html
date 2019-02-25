@@ -1,0 +1,44 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <div class="row">
+        <h1 class="title opt">Správa zákazníkov</h1>
+    </div>
+    {% if messages %} 
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+  
+    <table class="table table-striped col " style="width: 40%; margin-left: 5%; margin-top: 5%;">
+        <caption style="caption-side: top">Registrovaní zákazníci</caption>
+        <thead>
+            <tr>
+                <th scope="col">Login</th>
+                <th scope="col">Meno</th>
+                <th scope="col">Priezvisko</th>
+                <th>Odstrániť</th>
+            </tr>
+        </thead>
+        <tbody>
+        <form class="centeredForm" action="." method="POST">
+        {% csrf_token %}
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.username }}</td>
+                <td>{{ customer.first_name }}</td>
+                <td>{{ customer.last_name }}</td>
+                <td align="middle">
+                    <input type="checkbox" class="form-check-input" name="delete_cust" value="{{ customer.username }}"/>
+                </td>
+            </tr>
+        {% endfor %}
+            <input name="delete_list" class="button btn btn-lg btn-danger" type='submit' value='Odstrániť'/>
+        <form/>
+        </tbody>
+    </table>              
+{% endblock content %}		
+
+            

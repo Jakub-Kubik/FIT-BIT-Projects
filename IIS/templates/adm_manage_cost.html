@@ -1,0 +1,60 @@
+
+  {% extends 'base.html' %}
+  {% block content %}    
+      <div class="row">
+          <h1 class="col title opt">Správa kostýmov</h1>   
+      </div>
+                          
+      {% if messages %} 
+          {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+              {{ message }}
+          </div>
+          {% endfor %}
+      {% endif %}
+  
+      {% load static %}
+      <a href="{% url 'add_costume' %}" class="button btn btn-lg btn-success" >Pridať</a>
+    <table class="table table-striped" style="width: 90%; margin-left: 5%; margin-top: 5%;">
+        <thead>
+            <tr>
+                <th scope="col">Názov</th>
+
+                {% if request.user.is_superuser %}
+                    <th scope="col">Správca</th>
+                {% endif %}
+                
+                <th scope="col">Farba</th>
+                <th scope="col">Veľkosť</th>
+                <th scope="col">Cena</th>
+                <th scope="col">Množstvo</th>
+                <th scope="col">Odstrániť</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <form class="centeredForm" action="." method="POST">
+            {% csrf_token %}
+            {% for product in products %}
+            <tr>
+                <td>{{ product.costumes.name }}</td>
+
+                {% if request.user.is_superuser %}
+                    <td>{{ product.manager }}</td>
+                {% endif %}
+
+                <td>{{ product.costumes.color }}</td>
+                <td>{{ product.costumes.size }}</td>
+                <td>{{ product.costumes.price }}</td>
+                <td>{{ product.costumes.amount }}</td>
+                <td align="center">
+                    <input type="checkbox" class="form-check-input" name="delete_cost" value="{{ product.product_id }}"/>
+                </td>
+                <td><a href="#" class="btn btn-sm btn-warning" >Upraviť</a></td>
+            </tr>
+            {% endfor %}
+                <input name="delete_list" class="btn btn-lg btn-danger" type='submit' value='Odstrániť'/>
+            </form>
+        </tbody>
+    </table>
+{% endblock content %}

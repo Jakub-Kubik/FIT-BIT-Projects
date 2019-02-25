@@ -1,0 +1,24 @@
+<!-- ------------------------------------
+    VUT FIT 2018/19
+    Project to IIS
+    Jakub Kubik (xkubik32)
+    ------------------------------------
+    navigation for customer home page and subpages
+  -->
+
+<div class="btn-group container">
+	<div class="btn-group">
+		<div class="btn-group">
+			<button type="button" class="btn btn-lg btn-success dropdown-toggle" data-toggle="dropdown">
+				Tovar
+			</button>			
+			<div class="dropdown-menu animation slideDownIn">
+				<a class="dropdown-item btn-success" href="{% url 'costumes' %}">Kostýmy</a>
+				<a class="dropdown-item btn-success" href="{% url 'accessories' %}">Doplnky</a>
+			</div>
+		</div>
+
+		<a href="#" class="btn btn-lg btn-success">História objednávok</a>
+		<a href="{% url 'profile' %}" class="btn btn-lg btn-success">Profil</a>
+	</div>
+</div> 

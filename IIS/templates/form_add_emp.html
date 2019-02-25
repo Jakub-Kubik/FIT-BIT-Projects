@@ -1,0 +1,16 @@
+
+
+
+{% extends 'base.html' %}
+{% block content %}
+    <div id="body" class="container">
+        <h1 class="title">Registrácia zamestnanca</h1>
+        <form class="centeredForm" action="." method="POST">
+        {% csrf_token %}
+            {{ forms.basic_form.as_p }}
+            {{ forms.employee_form.as_p }}
+
+            <input class="btn btn-success" type='submit' value='Zaregistrovať'/>
+        </form>
+    </div>
+{% endblock content %}

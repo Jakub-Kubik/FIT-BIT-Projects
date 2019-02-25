@@ -1,0 +1,96 @@
+% Project n. 1 ITY
+% Jan Jakub Kubik (xkubik32)
+% VUT FIT 25.2.2017
+
+
+\documentclass[a4paper, 11pt, twocolumn]{article}
+
+% --------------------------------------------------
+% Reqquired options for pages size and indentations
+% --------------------------------------------------
+\usepackage[ text={17cm,24cm}, top=2.5cm, left=2cm]{geometry}
+
+% Language
+\usepackage[utf8x]{inputenc}
+\usepackage{csquotes}
+\usepackage[czech]{babel}
+\usepackage{courier}
+\usepackage{textcomp}
+
+% ------------Title page--------------
+\title{Typografie a publikování\\ 1.projekt}
+\author{Ján Jakub Kubík\\ xkubik32@fit.vutbr.cz}
+\date{}
+
+% ----------------
+% My instructions
+% ----------------
+\newcommand{\myuv}[1]{\quotedblbase #1\textquotedblleft} 	% my function for czech quotation marks
+\newcommand\tildo{\char`\~}
+
+
+\begin{document}
+\maketitle
+
+% -------
+% Part 1
+% -------
+\section{Hladká sazba}
+Hladká sazba je sazba z jednoho stupně, druhu \\a řezu pí­sma sázená na stanovenou šířku odstavce.
+Skládá se z odstavců, které obvykle začínají­ za\-ráž\-kou, ale mohou být sázeny i bez 
+za\-rážky – roz\-ho\-du\-jí\-­cí­ je celková grafická úprava. Odstavce jsou ukončeny východovou řádkou.
+ Věty nesmějí začínat číslicí.
+
+Barevné zvýraznění­, podtrhávání­ slov či různé velikosti písma vybraných slov se zde také 
+ne\-po\-uží\-vá. Hladká sazba je určena především pro delší­ texty, jako je napří­klad beletrie. 
+Porušení­ konzistence sazby působí v textu rušivě a unavuje čtenářův zrak.
+
+% -------
+% Part 2 
+% -------
+\section{Smíšená sazba} 
+
+Smíšená sazba má o něco volnější­ pravidla než hladká sazba. Nejčastěji se klasická hladká 
+sazba doplňuje o další řezy pí­sma pro zvýraznění­ dů\-le\-ži\-tých pojmů. Existuje \myuv{pravidlo}:	
+
+\begin{displayquote}Čí­m ví­ce {\textbf{druhů}, \emph{řezů}},  {\scriptsize velikostí}, 
+barev pí­sma a jiných efektů použijeme, tí­m profesionálněji bude  dokument vypadat. Čtenář
+tím bude vždy {\Huge nadšen!}
+\end{displayquote}
+
+\textsc{Tí­mto pravidlem se \underline{nikdy} nesmí­te ří­dit}. Příliš časté zvýrazňování textových
+elementů  a změny velikosti {\tiny pí­sma} jsou {\huge známkou \textbf{amatérismu}} autora a 
+působí­ \emph{\textbf{velmi} rušivě}. Dobře navržený dokument nemá obsahovat ví­ce než 4 
+řezy či druhy pí­sma. \texttt{Dobře navržený dokument je decentní­, ne chaotický}.
+
+Důležitým znakem správně vysázeného dokumentu je konzistentní použí­vání­ různých druhů zvýraznění­.
+To napří­klad může znamenat, že \textbf{tuč\-ný řez} pí­sma bude vyhrazen pouze pro klíčová
+slova, \emph{skloněný řez} pouze pro doposud neznámé pojmy a nebude se to míchat. Skloněný 
+řez ne\-pů\-so\-bí­ tak rušivě a použí­vá se častěji. V \LaTeX u jej sází­me raději pří­kazem 
+\texttt{\textbackslash emph\{text\}} než \texttt{\textbackslash textit\{text\}}.
+
+Smíšená sazba se nejčastěji používá pro sazbu vědeckých článků a technických zpráv.
+ U delší­ch dokumentů vědeckého či technického charakteru je zvykem upozornit čtenáře na význam různých typů zvýraznění­ v úvodní­ kapitole.
+
+% -------
+% Part 3
+% -------
+\section{České odlišnosti}
+
+Česká sazba se oproti okolní­mu světu v některých aspektech mí­rně liší­. Jednou z odlišností 
+je saz\-ba uvozovek. Uvozovky se v češtině použí­vají­ převážně pro zobrazení­ pří­mé řeči. \\V menší­ 
+míře se použí­vají­ také pro zvýraznění­ přezdí­vek a ironie. V češtině se použí­vá tento 
+\uv{\textbf{typ uvozovek}} namí­sto anglických "uvozovek". Lze je sázet připravenými příkazy
+ nebo při použití UTF-8 kódování i přímo.
+
+Ve smíšné sazbě se řez uvozovek ří­dí­ řezem první­ho uvozovaného slova. Pokud je uvozována 
+celá věta, sází­ se koncová tečka před uvozovku, pokud se uvozuje slovo nebo část věty, sází­ se tečka za uvozovku.
+
+Druhou odlišností je pravidlo pro sázení­ konců řádků. V české sazbě by řádek neměl končit 
+osa\-mo\-ce\-nou jednopí­smennou předložkou nebo spojkou. Spojkou \uv{a} končit může při sazbě do 
+25 liter. Abychom \LaTeX u zabránili v sázení­ osamocených předložek, vkládáme mezi předložku
+\\a slovo \textbf{nezlomitelnou mezeru} znakem \texttildelow (vlnka, tilda). Pro automatické doplnění 
+vlnek slouží­ volně šiřitelný program \emph{vlna} od pana Olšáka\footnote{Viz http://petr.olsak.net/ftp/olsak/vlna/.
+}.
+
+\end{document}

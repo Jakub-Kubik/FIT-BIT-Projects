@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Projekt IIS</title>
+<style type="text/css">
+    table { border-collapse: collapse; }
+    td, th { border: 1px solid black; padding: 0.3em 0.5em; text-align: left; }
+    dt { font-weight: bold; margin-top: 0.5em; }
+</style>
+</head>
+<body>
+<!-- Zkontrolujte prosím nastavení kódování v hlavičce dokumentu 
+ podle použitého editoru -->
+<h1>Požičovňa kostýmov</h1> <!-- Nahradte názvem svého zadání -->
+<dl>
+<dt>Autoři</dt>
+<dd>První jméno <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+    <a href="mailto:xautor01@stud.fit.vutbr.cz">xkubik32@stud.fit.vutbr.cz</a> -
+    Užívateľské rozhranie, správa produktov (kostými, doplnky), nasadzovanie do produkcie
+</dd>
+<dd>Druhé jméno <!-- Nahraďte skutečným jménem a e-mailem autora a popisem činnosti -->
+    <a href="mailto:xautor02@stud.fit.vutbr.cz">xkapic02@stud.fit.vutbr.cz</a> - 
+    Backend kostra projektu, správa užívateľov, prideľovanie práv
+</dd>
+<dt>URL aplikace</dt>
+<dd><a href="https://costrental.pythonanywhere.com/">https://costrental.pythonanywhere.com/</a></dd>
+<dd>(pokud má aplikace více vstupních stránek, napište obdobně další URL)</dd>
+</dl>
+<h2>Uživatelé systému pro testování</h2>
+<p>Uveďte prosím existující zástupce <strong>všech rolí uživatelů</strong>.</p>
+<table>
+<tr><th>Login</th><th>Heslo</th><th>Role</th></tr>
+<tr><td>admin</td><td>rental11</td><td>Administrátor</td></tr>
+<tr><td>xkapic02</td><td>rental11</td><td>Prodavač</td></tr>
+<tr><td>xkubik32</td><td>rental11</td><td>Zákazník</td></tr>
+</table>
+<h2>Implementace</h2>
+<p>
+    Každá časť informačného systému je implemetovaná v samostatnom adresári, kde každý adresár má rovnakú štrukrúru:
+    <ul>
+        <li>súbor models.py obsahuje modely pre vytvorenie tabuliek v databázy</li>
+        <li>súbor views.py  obsahuje samotnú funkcionalitu informačného systému ako registrácia užívateľa, pridanie produktu</li>
+        <li>súbor forms.py  obsahuje formuláre pre vkladanie vstupov</li>
+        <li>zvyšné súboru neboli v žiadnom adresáry použité</li>
+    </ul>
+    Adresáre:
+    <ul>
+        <li> <b>costumerental/</b>  hlavný adresár systému, ktorý obsahuje súbor settings.py pre nastavovanie základných premenných,
+                        ďalej urls.py, v ktorom sú nastavované cesty k jednotlivým podstránkam</li>  
+        <li><b>pages/</b>          obsahuje úvodnú stránku systému</li>
+        <li><b>accounts/</b>       implementácia prihlasovania, registrácie a spravovania užívateľov. Samostatná správa zákazníkov a zamestnancov. Možnosť zmeny hesla.</li>
+        <li><b>products/</b>        implementácia zobrazovania, pridávania a mazania produktov. </li>  
+        <li><b>static/</b> obsahuje súbor css pre menšie doladenie vizuálnych detailov a obrázky, ktoré sa zobrazujú na stránke</li>
+        <li><b>templates/</b>obsahuje HTML súbory, ktoré sú upravené aj pomocou Django template napríklad pre zobrazenie iného obsahu po prihlásení.</li>
+    </ul>
+    Oproti návrhu z IDS sme zmenili pôvodné dve tabuľky pre Zamestnanca a Zakazníka na jednu spoločnú s tým, že dodatočné informácie pre zamestnanca sú uvedené v inej tabuľke, ku ktorej je prístup cez cudzí kľúč.
+    Zmena bola uskutočnená kvôli tomu, že Django ponúka built-in tabuľku(model) pre užívateľa a je vhodnejšie aj na základe oficiálnej Django dokumentácie a aj kvôli bezpečnejšej implementácií používať jednu tabuľku pre užívateľské údaje.
+    A v prípade potreby si pridať dodatočné položky v tabuľke alebo rozšíriť dodatočné údaje do inej tabuľky, tak aby boli hlavne prihlasovacie údaje všetkých užívateľov v jednej tabuľke.
+</p>
+<h2>Instalace</h2>
+    Najľahšie je systém nasadiť do produkcie na hostovacej platforme pythonanywhere.com, ktorá je určená len pre hostovanie python aplikáccí. Po vytvorení účtu na tejto platforme sme pokračovali následovne:
+    <ul>
+        <li>Klonovanie repozitáru z githubu.</li>
+        <li>Vytvorenie viruálného rozhrania pre python.</li>
+        <li>Vytvorenie aplikácie pre Django v ich vizuálnom rozhraní.</li>
+        <li>Nastavenie cesty k nakolonovananému repozitáru.</li>
+        <li>Nastavenie cesty k virtuálnemu prostrediu.</li>
+        <li>Nastavenie cesty k statickým súborom.</li>
+        <li>Nastavenie settings.py.</li>
+        <li>Nastavenie wsgi.py.</li>
+        <li>Spustenie aplikácie</li>
+    </ul>
+<ul>
+<li>Stručně popište postup instalace na server</li>
+<li>Implementácia projektu je urobená v Python verzie 3.6.6 pomocou frameworku Django verzie 2.1.3 a databázového systému MySQL. Pre implementáciu užívateľského rozhrania sme použili HTML5 a Bootstrap 4.</li>
+<li>Vytvorte si adresár, v ktorom rozbalíte archív zip a v tom istom adresári pokračujte podľa návodu, ktorý je v súbore README.md</li>
+</ul>
+<h2>Známé problémy</h2>
+<p>Z use-case diagramu nebolo implementované z dôvodu časovej tiesne požičanie pruduktov, vytvorenie záznamu o pôžičke a úpráva už pridaných produktov.</p>
+</body>
+</html>

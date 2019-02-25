@@ -1,0 +1,24 @@
+<!-- ------------------------------------
+    VUT FIT 2018/19
+    Project to IIS
+    Jakub Kubik (xkubik32)
+    ------------------------------------
+    html file with form for registration
+  -->
+{% extends 'base.html' %}
+{% block content %}
+            <div id="body" class="container">
+
+                <h1 class="title">Registovať</h1>
+
+                <!-- VZOROVY FORMULAR -->
+                <form class="centeredForm" action="." method="POST">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                   
+
+                    <input class="btn btn-success" type='submit' value='Zaregistrovať'/>
+                </form>
+
+            </div>
+{% endblock content %}

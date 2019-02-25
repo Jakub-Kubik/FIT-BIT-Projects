@@ -1,0 +1,41 @@
+
+---------------------------------------------------------------------------------
+
+Klient-server pre mmeranie bandwidthu a rýchlosti
+
+    Klientovo serverová aplikácia pre jednoduché pre výpočet priemernej rýchlosti
+    uploadovania, maximálnej, minimálnej, priemernej RTT a standardnej odchylky
+    rychlosti. Program som riadne otestoval a spĺňa všetky požiadavky. Obmezujem
+    maximálnu veľkost dátovej časti UDP paketu na 65507 a maximálne číslo portu
+    na 65535 a minimálne na 0.
+---------------------------------------------------------------------------------
+
+Reflektor(server):
+
+./ipk-mtrip reflect -p port 
+
+    port - číslo portu, na kterém bude reflektor spuštěn.
+---------------------------------------------------------------------------------
+
+Měřák(klient):
+
+./ipk-mtrip meter -h vzdáleny_host -p vzdálený_port - s velikost_sondy -t doba_mereni
+
+    vzdáleny_host - doménové jméno nebo IP adresa stanice, na které je reflektor spuštěn.
+
+    vzdálený_port - číslo portu, na kterém je reflektor spuštěn.
+    velikost_sondy - velikost dat použitých v "probe" paketu
+    doba_mereni - celový čas měření 
+
+
+Výsledkem měření budou hodnoty:
+
+    průměrná přenosová rychlost
+    maximální naměřená rychlost
+    minimální naměřená rychlost 
+    standardní odchylka 
+    průměrný RTT paketů komunikace
+------------------------------------------------------------------------------------
+
+Autor
+    Ján Jakub Kubík (xkubik32)

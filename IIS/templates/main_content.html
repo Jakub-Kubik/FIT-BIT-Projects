@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Main content of page -->
+    <div id="body" class="container">
+        <h2 style="font-family: Palatino; width:80%; text-align: center; margin: auto;">
+            "Sme mladá, rýchlo sa rozvíjajúca firma zameraná na prenájom kostýmov cez internet 
+            s osobným odberom a platbou v hotovosti u nás na pobočke."
+        </h2>
+        <a href="{% url 'costumes' %}" class="btn btn-block btn-outline-success" style="margin-top:15%">
+            Kostýmy
+        </a>
+        <a href="{% url 'accessories' %}" class="btn btn-block btn-outline-success">
+            Doplnky
+        </a>
+    </div>
+{% endblock content %}

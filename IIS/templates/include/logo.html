@@ -1,0 +1,11 @@
+<!-- ------------------------------------
+    VUT FIT 2018/19
+    Project to IIS
+    Jakub Kubik (xkubik32)
+    ------------------------------------
+    logo for all html pages
+  -->
+{% load static %}
+<img onmouseover="this.src='{% static 'images/logo-hover.png' %}'"
+onmouseout="this.src='{% static 'images/logo.png' %}'"
+ src="{% static 'images/logo.png' %}"  width="100px" heigth="100px">

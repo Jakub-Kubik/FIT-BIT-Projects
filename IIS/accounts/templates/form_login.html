@@ -1,0 +1,28 @@
+<!-- ------------------------------------
+    VUT FIT 2018/19
+    Project to IIS
+    Jakub Kubik (xkubik32)
+    ------------------------------------
+    html file with form for login
+  -->
+
+{% extends 'base.html' %}
+{% block content %}
+            <div id="body" class="container">
+
+                <h1 class="title">Prihlásiť sa</h1>
+
+                <!-- VZOROVY FORMULAR -->
+                <form class="centeredForm" method="POST" action='.'>
+                {% csrf_token %}
+                    {{ form.as_p }}
+                    
+                    {% if request.GET.next %}
+                        <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                    {% endif %}
+                    
+                    <input class="btn btn-success" type='submit' value='Log In'/>
+                </form>
+
+            </div>
+{% endblock content %}

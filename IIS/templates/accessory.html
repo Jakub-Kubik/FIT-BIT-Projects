@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% block content %} 
+{% load static %}
+    <div id="body" class="container">
+
+		<h1 class="title">Doplnky</h1>
+
+		{% for access in accessory %}
+		<div class="item" >
+
+			<img src="{% static 'images/logo.png' %}" alt=""  class="col-4 rounded-circle image">
+					
+			<div style="float: left; margin-left: 10%">
+				<span class="text-white bg-dark" style="padding: 1.5%"><span class="decorate">Názov   :</span> <b>{{ access.name }}</b> </span><br>
+				<span class="decorate">Popis :</span> {{ access.description }} <br>
+				<span class="decorate">Mnozstvo :</span> {{ access.amount }} ks <br>
+				<span class="decorate">Cena :</span> {{ access.price }} €<br>
+				
+			</div>
+
+			{% if request.user.is_customer %}
+				<button type="button" class="btn btn-lg btn-success col-3" id="loginAndOut" style="margin-top: 26%;">
+					Pridať do košíka
+				</button>
+			{% endif %}
+		</div>
+		{% endfor %}
+                    
+    </div>
+
+{% endblock content %}

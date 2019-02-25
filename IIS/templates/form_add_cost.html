@@ -1,0 +1,16 @@
+
+
+
+  {% extends 'base.html' %}
+  {% block content %}
+      <div id="body" class="container">
+          <h1 class="title">Pridať kostým</h1>
+          <form class="centeredForm" action="." method="POST">
+          {% csrf_token %}
+              {{ forms.product_form.as_p }}
+              {{ forms.costume_form.as_p }}
+  
+              <input class="btn btn-success" type='submit' value='Pridať'/>
+          </form>
+      </div>
+  {% endblock content %}

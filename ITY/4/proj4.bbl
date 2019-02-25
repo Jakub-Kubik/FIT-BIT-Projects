@@ -1,0 +1,85 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bringhurst(1997)]{Bringhurst:The_elements_of_typhographis_style}
+{\sc Bringhurst}, R.
+\newblock \emph{The elements of typhographis style}.
+\newblock Vancouver~: Hartley and Marks Publishers, 2 edition, 1997.
+\newblock ISBN 0-88179-133-4.
+
+\bibitem[Javorek(2017)]{Javorek:2008}
+{\sc Javorek}, H.
+\newblock \emph{Skripta k webové typografii} [online]. Honza Javorek, 2017.
+  [cit.~15.\,4.\,2017].
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://honzajavorek.cz/blog/skripta-k-webove-typografii}>}$.
+
+\bibitem[Kašpar~Jirásek(2016)]{Kaspar:2016}
+{\sc Kašpar~Jirásek}, M.
+\newblock Možnosti a limity webové typografie.
+\newblock Bakalářská práce, Masaryková univerzita, Brno, 2016.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{https://is.muni.cz/th/395993/fi\_b/thesis.pdf}>}$.
+\newblock Vedoucí práce Pevný, L.
+
+\bibitem[Krynin(2017)]{Krynin:2017}
+{\sc Krynin}, J.
+\newblock \emph{What is typography?} [online]. ThoughtCo, 2017.
+  [cit.~15.\,4.\,2017].
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{https://www.thoughtco.com/what-is-typography-3467428}>}$.
+
+\bibitem[Krč(2012)]{Krc:2012}
+{\sc Krč}, J.
+\newblock Práce grafika je služba.
+\newblock \emph{TYPO}. zima 2012, č. 50.
+\newblock ISSN 1214-0716.
+
+\bibitem[Křena(2008)]{VUT}
+{\sc Křena}, B.
+\newblock Zavedení předmětu Typografie FIT VUT v Brně.
+\newblock In \emph{Informatika XXI/2008}, s. 57--58. Konvoj, 2008.
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.fit.vutbr.cz/research/view\_pub.php.cs?id=8568}>}$.
+\newblock ISBN 978-80-7302-151-1.
+
+\bibitem[Samara(2008)]{samara:2008}
+{\sc Samara}, T.
+\newblock \emph{Grafický design : základní pravidla a způsoby jejich
+  porušování}.
+\newblock {Praha}~: Slovart, 2008.
+\newblock ISBN 978-80-7391-030-3.
+
+\bibitem[Staff(2016)]{Cblog:2016}
+{\sc Staff}, C.~B.
+\newblock \emph{Typography rules} [online]. Creative Blog, 2016.
+  [cit.~15.\,4.\,2017].
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://www.creativebloq.com/typography/what-is-typography-123652}>}$.
+
+\bibitem[Tholenaar(2010)]{Tholenaar:2010}
+{\sc Tholenaar}, J.
+\newblock \emph{Type : a visual history of typefaces and graphic styles}.
+\newblock Koln~: Taschen, 2010.
+\newblock ISBN 978-3-8365-1101-8.
+
+\bibitem[wikipedie(2017)]{Wikipedia:2017}
+{\sc wikipedie}, P.
+\newblock \emph{Typografia (umenie)} [online]. Wikipedia, slobodna
+  encyklopedia, 2017. [cit.~15.\,4.\,2017].
+\newblock Dostupn{\'{e}}~z:
+  $\texttt{<{http://sk.wikipedia.org/wiki/Typografia\_(umenie)}>}$.
+
+\bibitem[Čečetka(2010)]{Cecetka:2010}
+{\sc Čečetka}, M.
+\newblock Typografie na webech malých podniků.
+\newblock Bakalářská práce, Vysoká škola ekonomická v Praze, Praha,
+  2010.
+\newblock Dostupn{\'{e}}~z: $\texttt{<{http://www.vse.cz/vskp/id/1115192}>}$.
+\newblock Vedoucí práce Gála, L.
+
+\end{thebibliography}
